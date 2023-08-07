@@ -14,7 +14,7 @@ Video o Gif
 
 1. Crear proyecto -> [Proyecto](https://console.cloud.google.com/projectcreate?previousPage=%2Fapis%2Fdashboard%3Fhl%3Des-419%26project%3Dchallenge-395013&organizationId=0&hl=es-419)
 2. Habilitar API de Google Drive -> [API](https://console.cloud.google.com/apis/library/drive.googleapis.com?hl=es-419&organizationId=0&project=challenge-395013)
-3. Configura la pantalla de consentimiento de OAuth y agrégate como usuario de prueba -> [Consentimiento](https://console.cloud.google.com/apis/credentials/consent?hl=es-419)
+3. Configurar la pantalla de consentimiento de OAuth y agrégar usuario de prueba -> [Consentimiento](https://console.cloud.google.com/apis/credentials/consent?hl=es-419)
 4. Generar credenciales para aplicación de escritorio de tipo **ID de cliente de OAuth** -> [OAuth](https://console.cloud.google.com/apis/credentials?hl=es-419) 
 5. Descargar credencial **[client_secret]**
 #### Entorno Windows con Docker
