@@ -1,0 +1,71 @@
+{{define "clasificacion"}}
+{{template "cabecera"}}
+
+<div class="card">
+          	{{range.}}
+                <div class="card-body">
+                <hr size="2px" color="black" />
+                <div class="card-header"><h2>Información del Documento</h2></div>
+                <ul class="list-group list-group-flush">
+                <li class}}"list-group-item">Identificador: <span id="fileID">{{.FileID}}</span></li>
+                <li class}}"list-group-item">Nombre del Archivo: {{.FileName}}</li>
+                <li class}}"list-group-item">Propietario: {{.FileOwner}}</li>
+                <li class}}"list-group-item">Visibilidad: {{.Visibility}}</li>
+                <li class}}"list-group-item">Clasificación: {{.Classification}}</li>
+                <li class}}"list-group-item">Fecha de Creación: {{.CreatedTime}}</li>
+                <li class}}"list-group-item">Fecha de Modificación: {{.ModifiedTime}}</li>
+                <li class}}"list-group-item">Version: {{.Version}}</li>
+
+                <a name="" id="" role="button" href={{.ViewFile}} class="btn btn-outline-primary" style="display: inline-block;">Ver</a>
+                <hr size="2px" color="black" />
+                <div class="card-header"><h2>Clasificación</h2></div>
+                    <table class="table table-striped" style="text-align:center;">
+                         <tr>
+                        			    <th>ID</th>
+                        			    <th>Nombre del Archivo</th>
+                        			    <th>Extensión</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                                  <td>Pregunta A</td>
+                                  <td>
+                                    <div class="form-check">
+                                      <input value="1" class="form-check-input" type="radio" name="radioGroup1" id="radio1"    onclick="handleCheckboxClick('radio1')">
+                                      <label class="form-check-label" for="radio1"></label>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div class="form-check">
+                                      <input value="0" class="form-check-input" type="radio" name="radioGroup1" id="radio2" onclick="handleCheckboxClick('radio2')">
+                                      <label class="form-check-label" for="radio2"></label>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Pregunta B</td>
+                                  <td>
+                                    <div class="form-check">
+                                      <input value="1" class="form-check-input" type="radio" name="radioGroup2" id="radio3" onclick="handleCheckboxClick('radio3')">
+                                      <label class="form-check-label" for="radio3"></label>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div class="form-check">
+                                      <input value="0" class="form-check-input" type="radio" name="radioGroup2" id="radio4" onclick="handleCheckboxClick('radio4')">
+                                      <label class="form-check-label" for="radio4"></label>
+                                    </div>
+                                  </td>
+                                </tr>
+                    </tbody>
+                </table>
+
+                </ul>
+                <hr size="2px" color="black" />
+                <a onclick="enviarDatosSeleccionados()" name="" id="" role="button" href="/listado" class="btn btn-success"style="float: right;width: 250px; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">Guardar Clasificación</a>
+                <a name="" id="" role="button" class="btn btn-dark" href="" style="float: right;padding: 18px 1px;"></a>
+                <a name="" id="" role="button" href="/listado" class="btn btn-danger" style="float: right;width: 250px; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">Salir</a>
+            {{end}}
+          </div>
+{{template "pie"}}
+{{end}}

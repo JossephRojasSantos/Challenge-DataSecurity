@@ -1,0 +1,20 @@
+{{define "inicio"}}
+{{template "cabecera"}}
+<div class="container">
+  <h1>Bienvenido a la Clasificación de tus Documentos!!! </h1>
+  <p>Clasificar documentos puede parecer una tarea simple, pero en realidad desempeña un
+  papel esencial en la organización y eficiencia de nuestros sistemas.
+  Al clasificar documentos, estamos creando un orden que facilita la búsqueda, recuperación y protección de esta información.
+  Al asignar niveles de acceso adecuados a diferentes categorías de documentos, podemos controlar quién puede ver o modificar información sensible.
+  Esto es especialmente importante para nuestro entorno empresarial donde la confidencialidad es crucial.
+   </p>
+   <p>
+   Para iniciar con la clasificación de tus documentos, es esencial otorgar los permisos correspondientes al aplicativo y luego si puedes continuar con tu proceso.
+    </p>
+    <p>Nota: Si ya otorgaste permisos, no es requerido hacerlo de nuevo :)</p>
+  <td><a class="btn btn-primary" href={{.}} role="button">Otorgar Permisos</a></td>
+  <td><a class="btn btn-primary" href="/listado" role="button">Iniciar Clasificación</a></td>
+</div>
+
+{{template "pie"}}
+{{end}}
