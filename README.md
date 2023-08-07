@@ -1,34 +1,39 @@
-# Challenge
+# Challenge Data Security
 
 ## Resumen:
 
-Se ha desarrollado una API en lenguaje Go que se encarga de obtener información de clientes desde un proveedor externo. Esta API procesa y trata los datos para generar disponibilidad, permitiendo que la información sea accesible para los distintos sectores dentro de la empresa, garantizando un acceso controlado y eficiente al contenido.
+Se ha desarrollado una API en lenguaje Go que tiene como función principal la enumeración de los archivos almacenados en Google Drive. Posteriormente, esta API permite acceder y modificar los metadatos de estos archivos en función de la criticidad asignada por el usuario de la cuenta. 
 
 ![](https://github.com/JossephRojasSantos/Challenge/blob/main/png/Diagrama%20-%20Arquitectura.png)
 
 
-![](https://github.com/JossephRojasSantos/Challenge/blob/main/png/Diagrama.png)
+Video o Gif
 ### Pasos Iniciales:
 ------
+#### Habilitar Entorno Google Cloud
+
+1. Crear proyecto -> [Proyecto](https://console.cloud.google.com/projectcreate?previousPage=%2Fapis%2Fdashboard%3Fhl%3Des-419%26project%3Dchallenge-395013&organizationId=0&hl=es-419)
+2. Habilitar API de Google Drive -> [API](https://console.cloud.google.com/apis/library/drive.googleapis.com?hl=es-419&organizationId=0&project=challenge-395013)
+3. Configura la pantalla de consentimiento de OAuth y agrégate como usuario de prueba -> [Consentimiento](https://console.cloud.google.com/apis/credentials/consent?hl=es-419)
+4. Generar credenciales para aplicación de escritorio de tipo **ID de cliente de OAuth** -> [OAuth](https://console.cloud.google.com/apis/credentials?hl=es-419) 
+5. Descargar credencial **[client_secret]**
 #### Entorno Windows con Docker
 
 1. Descargar e instalar MySQL ->  [MySQL](https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.33-winx64-debug-test.zip)
 2. Confirmar puerto de servicio **[port]**
 3. Crear Base de Datos **[dbname]**
-4. Generar usuario de lectura y escritura en la base de datos *[dbname]* creada en el punto 3 **[user][pass]**
+4. Generar usuario de lectura y escritura en la base de datos *[dbname]* creada en el punto 3 **[user][passroot]**
 5. Descargar e instalar Docker -> [Docker](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe)
-6. Modificar la sección **IPv4 local connections:** del archivo **pg_hba.conf** de la base de datos, ingresando la IP de Origen definida en el Contenedor.
-7. Reiniciar servicio de PostgreSQL. 
+6. Modificar la sección **bind-address** del archivo **my.ini** de la base de datos, ingresando la IP de Origen definida en el Contenedor.
+7. Reiniciar servicio de MySQL. 
 8. Ingresar los siguientes datos de variables de entorno **ENV** ubicadas en el archivo **Dockerfile**
 
-* ENV host=[IP del equipo donde se ejecuta el servicio PostgreSQL]
+* ENV host=[IP del equipo donde se ejecuta el servicio MySQL]
 * ENV port=[port]-> Definido en el punto 2
 * ENV user=[user]-> Definido en el punto 4
-* ENV passworddb=[pass]-> Definido en el punto 4
+* ENV passworddb=[passroot]-> Definido en el punto 4
 * ENV dbname=[dbname]-> Definido en el punto 3
-* ENV passwordadmin=[passadmin]-> Contraseña en sha512
-* ENV changepass=1-> Cuando se encuentra con valor 0, cambia la contraseña de passwordadmin 
-* ENV jwtkey=[jwtkey]-> Contraseña para la firma de token de sesión
+* ENV client_secret=[client_secret]-> Ubicación de la llave en formato JSON, archivo descargado una vez configurado el entorno de Google Cloud.
 
 ![](https://github.com/JossephRojasSantos/Challenge/blob/main/png/ENVDockerFile.png)
 
