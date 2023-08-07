@@ -4,7 +4,7 @@
 
 Se ha desarrollado una API en lenguaje Go que tiene como función principal la enumeración de los archivos almacenados en Google Drive. Posteriormente, esta API permite acceder y modificar los metadatos de estos archivos en función de la criticidad asignada por el usuario de la cuenta. 
 
-![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/tree/master/png/Diagrama%20-%20Arquitectura.png)
+![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/blob/master/png/Diagrama%20-%20Arquitectura.png)
 
 
 Video o Gif
