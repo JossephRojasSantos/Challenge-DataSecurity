@@ -24,9 +24,13 @@ Video o Gif
 3. Crear Base de Datos **[dbname]**
 4. Generar usuario de lectura y escritura en la base de datos *[dbname]* creada en el punto 3 **[user][passroot]**
 5. Descargar e instalar Docker -> [Docker](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe)
-6. Modificar la sección **bind-address** del archivo **my.ini** de la base de datos, ingresando la IP de Origen definida en el Contenedor.
-7. Reiniciar servicio de MySQL. 
-8. Ingresar los siguientes datos de variables de entorno **ENV** ubicadas en el archivo **Dockerfile**
+6. Modificar y/o incluir la sección **bind-address=0.0.0.0** del archivo **my.ini** de la base de datos, ingresando la IP de Origen definida en el Contenedor.
+7. Ejecutar desde Workbench el siguiente código:
+```SQL
+   GRANT ALL PRIVILEGES ON challenge.* TO 'dbadmin'@'%';
+```
+8. Reiniciar servicio de MySQL. 
+9. Ingresar los siguientes datos de variables de entorno **ENV** ubicadas en el archivo **Dockerfile**
 
 * ENV host=[IP del equipo donde se ejecuta el servicio MySQL]
 * ENV port=[port]-> Definido en el punto 2
