@@ -12,7 +12,7 @@ Se ha desarrollado una API en lenguaje Go que se encarga de obtener información
 ------
 #### Entorno Windows con Docker
 
-1. Descargar e instalar PostgreSQL ->  [PostgreSQL](https://get.enterprisedb.com/postgresql/postgresql-10.23-1-windows.exe)
+1. Descargar e instalar MySQL ->  [MySQL](https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.33-winx64-debug-test.zip)
 2. Confirmar puerto de servicio **[port]**
 3. Crear Base de Datos **[dbname]**
 4. Generar usuario de lectura y escritura en la base de datos *[dbname]* creada en el punto 3 **[user][pass]**
@@ -44,7 +44,7 @@ docker run -p 8080:8080 -p 443:443 -p 80:80 servidor:Challenge
 ------
 #### Entorno Windows sin Docker
 
-1. Descargar e instalar PostgreSQL ->  [PostgreSQL](https://get.enterprisedb.com/postgresql/postgresql-10.23-1-windows.exe)
+1. Descargar e instalar MySQL ->  [MySQL](https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.33-winx64-debug-test.zip)
 2. Confirmar puerto de servicio **[port]**
 3. Crear Base de Datos **[dbname]**
 4. Generar usuario de lectura y escritura en la base de datos **[dbname]** creada en el punto 3 **[user][pass]**
