@@ -20,18 +20,12 @@ import (
 )
 
 var (
-	host          = "127.0.0.1"
-	port          = "3306"
-	user          = "dbadmin"
-	passroot      = "Holacomoestan30*"
-	dbname        = "challenge"
-	client_secret = "C:/client_secret.json"
-	/*host      = os.Getenv("host")
-	port      = os.Getenv("port")
-	user      = os.Getenv("user")
-	passroot  = os.Getenv("passroot")
-	dbname    = os.Getenv("dbname")
-	client_secret = os.Getenv("client_secret")*/
+	host           = os.Getenv("host")
+	port           = os.Getenv("port")
+	user           = os.Getenv("user")
+	passroot       = os.Getenv("passroot")
+	dbname         = os.Getenv("dbname")
+	client_secret  = os.Getenv("client_secret")
 	mysqlInfo      = fmt.Sprintf(user + ":" + passroot + "@tcp(" + host + ":" + port + ")/" + dbname)
 	filePathKEY    string
 	filePathCERT   string
