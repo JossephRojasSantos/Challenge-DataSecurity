@@ -20,11 +20,11 @@ EXPOSE 80
 # Define el comando de inicio de la aplicación
 CMD ["./main"]
 
-ENV host=
-ENV port=
-ENV user=
-ENV passworddb=
-ENV dbname=
-ENV passwordadmin=
-ENV changepass=1
-ENV jwtkey=
+ENV host=192.168.1.11
+ENV port=3306
+ENV user=dbadmin
+ENV passroot=XXXXXXXXXXXXXXXXXXXXX
+ENV dbname=challenge
+ENV client_secret=/app/client_secret.json
+ENV openia=XXXXXXXXXXXXX
+

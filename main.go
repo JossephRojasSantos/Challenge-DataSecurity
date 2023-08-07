@@ -360,9 +360,9 @@ func InsertarCriticidad(criticidad string, idArchivo string) {
 
 func OpenIA(w http.ResponseWriter, r *http.Request) {
 
-	openia = "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"
+	openia = "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"
 	query := r.FormValue("query")
-
+	log.Println(query)
 	requestData := map[string]interface{}{
 		"messages": []map[string]string{
 			{
@@ -374,7 +374,7 @@ func OpenIA(w http.ResponseWriter, r *http.Request) {
 				"content": query,
 			},
 		},
-		"model": "ada",
+		"model": "gpt-3.5-turbo", // Cambia al modelo de chat adecuado
 	}
 
 	// Codifica el mapa como JSON
@@ -384,27 +384,45 @@ func OpenIA(w http.ResponseWriter, r *http.Request) {
 	apiURL := "https://api.openai.com/v1/chat/completions"
 	req, err := http.NewRequest(http.MethodPost, apiURL, bytes.NewBuffer(jsonData))
 	Err(err)
-
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+openia)
 
-	log.Println(req)
-
 	client := http.Client{}
 	resp, err := client.Do(req)
-	Err(err)
+	if err != nil {
+		http.Error(w, "Error sending request", http.StatusInternalServerError)
+		return
+	}
 	defer resp.Body.Close()
 
-	if r.Method == http.MethodPost {
-		openAIResponse, err := ioutil.ReadAll(resp.Body)
-		var prettyJSON bytes.Buffer
-		err = json.Indent(&prettyJSON, openAIResponse, "", "  ")
-
-		Err(err)
-		_ = tmpl.ExecuteTemplate(w, "openia", prettyJSON.String())
-	} else {
-		_ = tmpl.ExecuteTemplate(w, "openia", nil)
-
+	if resp.StatusCode != http.StatusOK {
+		http.Error(w, "Error from API: "+resp.Status, http.StatusInternalServerError)
+		return
 	}
 
+	openAIResponse, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		http.Error(w, "Error reading response", http.StatusInternalServerError)
+		return
+	}
+
+	var result struct {
+		Choices []struct {
+			Message struct {
+				Content string `json:"content"`
+			} `json:"message"`
+		} `json:"choices"`
+	}
+
+	if err := json.Unmarshal(openAIResponse, &result); err != nil {
+		http.Error(w, "Error parsing response JSON", http.StatusInternalServerError)
+		return
+	}
+
+	if len(result.Choices) > 0 {
+		fmt.Println("Response Content:", result.Choices[0].Message.Content)
+		_ = tmpl.ExecuteTemplate(w, "openia", result.Choices[0].Message.Content)
+	} else {
+		_ = tmpl.ExecuteTemplate(w, "openia", nil)
+	}
 }
