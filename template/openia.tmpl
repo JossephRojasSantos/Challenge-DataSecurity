@@ -1,0 +1,14 @@
+{{define "openia"}}
+{{template "cabecera"}}
+<div class="card">
+<form method="post" action="/openia" style="text-align: center;">
+  				<input type="text" name="query" placeholder="Buscar..." />
+  				<input type="submit" value="Buscar" />
+</form>
+    <div class="response-box" style="text-align: center;">
+      <h1>Resultado</h1>
+      <p>{{.}}</p>
+    </div>
+</div>
+{{template "pie"}}
+{{end}}

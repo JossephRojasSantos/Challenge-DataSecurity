@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"database/sql"
 	"encoding/json"
@@ -25,6 +26,7 @@ var (
 	passroot       = os.Getenv("passroot")
 	dbname         = os.Getenv("dbname")
 	client_secret  = os.Getenv("client_secret")
+	openia         = os.Getenv("openia")
 	mysqlInfo      = fmt.Sprintf(user + ":" + passroot + "@tcp(" + host + ":" + port + ")/" + dbname)
 	filePathKEY    string
 	filePathCERT   string
@@ -108,6 +110,7 @@ func main() {
 	r.HandleFunc("/", Inicio)
 	r.HandleFunc("/clasificacion", Clasificacion)
 	r.HandleFunc("/listado", Listado)
+	r.HandleFunc("/openia", OpenIA)
 
 	go func() {
 		_ = http.ListenAndServeTLS(":443", filePathCERT, filePathKEY, r)
@@ -208,7 +211,6 @@ func ConexionGDrive() {
 	}
 }
 func Inicio(w http.ResponseWriter, r *http.Request) {
-
 	URLGDrive()
 	_ = tmpl.ExecuteTemplate(w, "inicio", authURL)
 	idDatoToken = r.URL.Query().Get("code")
@@ -261,6 +263,7 @@ func Listado(w http.ResponseWriter, r *http.Request) {
 	_ = tmpl.ExecuteTemplate(w, "listado", arraytable)
 }
 func Clasificacion(w http.ResponseWriter, r *http.Request) {
+
 	idDato := r.URL.Query().Get("id")
 
 	db := ConexionDB()
@@ -351,6 +354,57 @@ func InsertarCriticidad(criticidad string, idArchivo string) {
 			_, err = srv.Files.Update(idArchivo, updateFile).Fields("shared").Do()
 			Err(err)
 		}
+	}
+
+}
+
+func OpenIA(w http.ResponseWriter, r *http.Request) {
+
+	openia = "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"
+	query := r.FormValue("query")
+
+	requestData := map[string]interface{}{
+		"messages": []map[string]string{
+			{
+				"role":    "system",
+				"content": "You are a helpful assistant.",
+			},
+			{
+				"role":    "user",
+				"content": query,
+			},
+		},
+		"model": "ada",
+	}
+
+	// Codifica el mapa como JSON
+	jsonData, err := json.Marshal(requestData)
+	Err(err)
+
+	apiURL := "https://api.openai.com/v1/chat/completions"
+	req, err := http.NewRequest(http.MethodPost, apiURL, bytes.NewBuffer(jsonData))
+	Err(err)
+
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Authorization", "Bearer "+openia)
+
+	log.Println(req)
+
+	client := http.Client{}
+	resp, err := client.Do(req)
+	Err(err)
+	defer resp.Body.Close()
+
+	if r.Method == http.MethodPost {
+		openAIResponse, err := ioutil.ReadAll(resp.Body)
+		var prettyJSON bytes.Buffer
+		err = json.Indent(&prettyJSON, openAIResponse, "", "  ")
+
+		Err(err)
+		_ = tmpl.ExecuteTemplate(w, "openia", prettyJSON.String())
+	} else {
+		_ = tmpl.ExecuteTemplate(w, "openia", nil)
+
 	}
 
 }
