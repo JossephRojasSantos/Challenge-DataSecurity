@@ -15,7 +15,6 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"strconv"
 	"text/template"
 )
 
@@ -227,7 +226,7 @@ func Listado(w http.ResponseWriter, r *http.Request) {
 		//fmt.Print(strconv.Itoa(data.Suma) + "\n")
 	}
 
-	Modificacion(strconv.Itoa(data.Suma), data.File_ID)
+	Modificacion(data.Suma, data.File_ID)
 
 	db := ConexionDB()
 	defer func(db *sql.DB) {
@@ -302,18 +301,18 @@ func Clasificacion(w http.ResponseWriter, r *http.Request) {
 	_ = tmpl.ExecuteTemplate(w, "clasificacion", arraytable2)
 
 }
-func Modificacion(data string, fileid string) {
-	switch data {
-	case "1":
+func Modificacion(data int, fileid string) {
+
+	if data >= 1 && data < 4 {
 		InsertarCriticidad("Bajo", fileid)
-	case "2":
+	} else if data >= 4 && data < 6 {
 		InsertarCriticidad("Medio", fileid)
-	case "3":
+	} else if data >= 6 && data < 9 {
 		InsertarCriticidad("Alto", fileid)
-	case "4":
-		InsertarCriticidad("Critico", fileid)
-	default:
-		log.Println("No se clasificó")
+	} else if data >= 9 {
+		InsertarCriticidad("Crítico", fileid)
+	} else {
+		log.Println("No se clasifico")
 	}
 }
 func InsertarCriticidad(criticidad string, idArchivo string) {
