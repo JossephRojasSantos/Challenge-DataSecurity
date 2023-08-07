@@ -4,7 +4,7 @@
 
 Se ha desarrollado una API en lenguaje Go que tiene como función principal la enumeración de los archivos almacenados en Google Drive. Posteriormente, esta API permite acceder y modificar los metadatos de estos archivos en función de la criticidad asignada por el usuario de la cuenta. 
 
-![](https://github.com/JossephRojasSantos/Challenge/blob/main/png/Diagrama%20-%20Arquitectura.png)
+![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/tree/master/png/Diagrama%20-%20Arquitectura.png)
 
 
 Video o Gif
@@ -35,7 +35,7 @@ Video o Gif
 * ENV dbname=[dbname]-> Definido en el punto 3
 * ENV client_secret=[client_secret]-> Ubicación de la llave en formato JSON, archivo descargado una vez configurado el entorno de Google Cloud.
 
-![](https://github.com/JossephRojasSantos/Challenge/blob/main/png/ENVDockerFile.png)
+![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/tree/master/png/ENVDockerFile.png)
 
 8. Descargamos el presente repositorio, nos ubicamos con un CMD en el proyecto e ingresamos los siguientes comandos:
 ```docker
@@ -67,7 +67,7 @@ docker run -p 8080:8080 -p 443:443 -p 80:80 servidor:Challenge
 * Changepass=1 -> Cuando se encuentra con valor 0, cambia la contraseña de passwordadmin 
 
 
-![](https://github.com/JossephRojasSantos/Challenge/blob/main/png/Variables%20de%20Entorno.png)
+![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/tree/master/png/Variables%20de%20Entorno.png)
 
 8. Descargamos el presente repositorio, nos ubicamos con un CMD en el proyecto e ingresamos el siguiente comando:
 ```go
