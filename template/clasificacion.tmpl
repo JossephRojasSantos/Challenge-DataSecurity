@@ -21,42 +21,182 @@
                 <div class="card-header"><h2>Clasificación</h2></div>
                     <table class="table table-striped" style="text-align:center;">
                          <tr>
-                        			    <th>ID</th>
-                        			    <th>Nombre del Archivo</th>
-                        			    <th>Extensión</th>
+                        			    <th>Pregunta</th>
+                        			    <th>Sí</th>
+                        			    <th>No</th>
                          </tr>
                     </thead>
                     <tbody>
                          <tr>
-                                  <td>Pregunta A</td>
-                                  <td>
-                                    <div class="form-check">
-                                      <input value="1" class="form-check-input" type="radio" name="radioGroup1" id="radio1"    onclick="handleCheckboxClick('radio1')">
-                                      <label class="form-check-label" for="radio1"></label>
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <div class="form-check">
-                                      <input value="0" class="form-check-input" type="radio" name="radioGroup1" id="radio2" onclick="handleCheckboxClick('radio2')">
-                                      <label class="form-check-label" for="radio2"></label>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Pregunta B</td>
-                                  <td>
-                                    <div class="form-check">
-                                      <input value="1" class="form-check-input" type="radio" name="radioGroup2" id="radio3" onclick="handleCheckboxClick('radio3')">
-                                      <label class="form-check-label" for="radio3"></label>
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <div class="form-check">
-                                      <input value="0" class="form-check-input" type="radio" name="radioGroup2" id="radio4" onclick="handleCheckboxClick('radio4')">
-                                      <label class="form-check-label" for="radio4"></label>
-                                    </div>
-                                  </td>
-                                </tr>
+                         								<td>¿Es el archivo crítico para las operaciones diarias?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="4" class="form-check-input" type="radio" name="radioGroup1" id="radio1"    onclick="handleCheckboxClick('radio1')">
+                                                               <label class="form-check-label" for="radio1"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup1" id="radio2" onclick="handleCheckboxClick('radio2')">
+                                                               <label class="form-check-label" for="radio2"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+                                                         <tr>
+                                                           <td>¿Es difícil o costoso reemplazar?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="2" class="form-check-input" type="radio" name="radioGroup2" id="radio3" onclick="handleCheckboxClick('radio3')">
+                                                               <label class="form-check-label" for="radio3"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup2" id="radio4" onclick="handleCheckboxClick('radio4')">
+                                                               <label class="form-check-label" for="radio4"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+
+                         								<tr>
+                         								<td>¿El documento es importante para la toma de decisiones?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="4" class="form-check-input" type="radio" name="radioGroup3" id="radio5"    onclick="handleCheckboxClick('radio5')">
+                                                               <label class="form-check-label" for="radio5"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup3" id="radio6" onclick="handleCheckboxClick('radio6')">
+                                                               <label class="form-check-label" for="radio6"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+                                                         <tr>
+                                                           <td>¿El acceso a este archivo está restringido a un grupo limitado de personas?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="2" class="form-check-input" type="radio" name="radioGroup4" id="radio7" onclick="handleCheckboxClick('radio7')">
+                                                               <label class="form-check-label" for="radio7"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup4" id="radio8" onclick="handleCheckboxClick('radio8')">
+                                                               <label class="form-check-label" for="radio8"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+
+                         								<tr>
+                         								<td>¿El documento es necesario para evitar daños a la propiedad o al medio ambiente?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="3" class="form-check-input" type="radio" name="radioGroup5" id="radio9"    onclick="handleCheckboxClick('radio9')">
+                                                               <label class="form-check-label" for="radio9"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup5" id="radio10" onclick="handleCheckboxClick('radio10')">
+                                                               <label class="form-check-label" for="radio10"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+                                                         <tr>
+                                                           <td>¿Este documento se relaciona con un contrato, requisito legal o reglamentario?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="5" class="form-check-input" type="radio" name="radioGroup6" id="radio11" onclick="handleCheckboxClick('radio11')">
+                                                               <label class="form-check-label" for="radio11"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup6" id="radio12" onclick="handleCheckboxClick('radio12')">
+                                                               <label class="form-check-label" for="radio12"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+
+                         								<tr>
+                         								<td>¿El documento contiene información médica, como registros médicos o resultados de pruebas?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="7" class="form-check-input" type="radio" name="radioGroup7" id="radio13"    onclick="handleCheckboxClick('radio13')">
+                                                               <label class="form-check-label" for="radio13"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup7" id="radio14" onclick="handleCheckboxClick('radio14')">
+                                                               <label class="form-check-label" for="radio14"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+                                                         <tr>
+                                                           <td>¿El documento contiene información de identificación personal (PII), como un número de seguro social, número de documento nacional de identidad o número de pasaporte?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="10" class="form-check-input" type="radio" name="radioGroup8" id="radio15" onclick="handleCheckboxClick('radio15')">
+                                                               <label class="form-check-label" for="radio15"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup8" id="radio16" onclick="handleCheckboxClick('radio16')">
+                                                               <label class="form-check-label" for="radio16"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+
+                         								<tr>
+                         								<td>¿El documento contiene detalles financieros como cuentas bancarias o inversiones?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="10" class="form-check-input" type="radio" name="radioGroup9" id="radio17"    onclick="handleCheckboxClick('radio17')">
+                                                               <label class="form-check-label" for="radio17"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup9" id="radio18" onclick="handleCheckboxClick('radio18')">
+                                                               <label class="form-check-label" for="radio18"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+                                                         <tr>
+                                                           <td>¿El documento contiene información confidencial de la empresa, como secretos comerciales o información de propiedad intelectual?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="10" class="form-check-input" type="radio" name="radioGroup10" id="radio19" onclick="handleCheckboxClick('radio19')">
+                                                               <label class="form-check-label" for="radio19"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup10" id="radio20" onclick="handleCheckboxClick('radio20')">
+                                                               <label class="form-check-label" for="radio20"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+                         								<tr>
+                                                           <td>¿El archivo contiene información de tarjetas de crédito, como números de tarjeta de crédito, fechas de vencimiento o códigos de seguridad?</td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="10" class="form-check-input" type="radio" name="radioGroup11" id="radio21" onclick="handleCheckboxClick('radio21')">
+                                                               <label class="form-check-label" for="radio21"></label>
+                                                             </div>
+                                                           </td>
+                                                           <td>
+                                                             <div class="form-check">
+                                                               <input value="0" class="form-check-input" type="radio" name="radioGroup11" id="radio22" onclick="handleCheckboxClick('radio22')">
+                                                               <label class="form-check-label" for="radio22"></label>
+                                                             </div>
+                                                           </td>
+                                                         </tr>
+
                     </tbody>
                 </table>
 
