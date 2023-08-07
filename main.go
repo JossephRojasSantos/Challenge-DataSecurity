@@ -305,12 +305,16 @@ func Modificacion(data int, fileid string) {
 
 	if data >= 1 && data < 4 {
 		InsertarCriticidad("Bajo", fileid)
+		log.Println("Bajo")
 	} else if data >= 4 && data < 6 {
 		InsertarCriticidad("Medio", fileid)
+		log.Println("Medio")
 	} else if data >= 6 && data < 9 {
 		InsertarCriticidad("Alto", fileid)
+		log.Println("Alto")
 	} else if data >= 9 {
 		InsertarCriticidad("Crítico", fileid)
+		log.Println("Critico")
 	} else {
 		log.Println("No se clasifico")
 	}
