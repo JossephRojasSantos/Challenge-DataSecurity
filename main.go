@@ -102,7 +102,7 @@ func redirectToHttps(writer http.ResponseWriter, request *http.Request) {
 }
 
 func main() {
-
+	//fmt.Print(openia)
 	Certificados()
 	CrearTablaInventario()
 
@@ -360,7 +360,6 @@ func InsertarCriticidad(criticidad string, idArchivo string) {
 
 func OpenIA(w http.ResponseWriter, r *http.Request) {
 
-	openia = "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"
 	query := r.FormValue("query")
 	log.Println(query)
 	requestData := map[string]interface{}{
