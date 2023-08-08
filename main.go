@@ -388,10 +388,8 @@ func OpenIA(w http.ResponseWriter, r *http.Request) {
 
 	client := http.Client{}
 	resp, err := client.Do(req)
-	if err != nil {
-		http.Error(w, "Error sending request", http.StatusInternalServerError)
-		return
-	}
+	Err(err)
+
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
@@ -400,10 +398,7 @@ func OpenIA(w http.ResponseWriter, r *http.Request) {
 	}
 
 	openAIResponse, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		http.Error(w, "Error reading response", http.StatusInternalServerError)
-		return
-	}
+	Err(err)
 
 	var result struct {
 		Choices []struct {
