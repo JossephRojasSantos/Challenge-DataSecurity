@@ -341,7 +341,7 @@ func InsertarCriticidad(criticidad string, idArchivo string) {
 		_, err = srv.Files.Update(idArchivo, updateFile).Fields("properties").Do()
 		Err(err)
 		log.Println("Archivo clasificado")
-		if criticidad == "Crítico" {
+		if criticidad == "Crítico" || criticidad == "Alto" {
 			privado := 0
 			updateQuery := "UPDATE inventario SET Visibility = ? WHERE FileID = ?"
 			_, err := db.Exec(updateQuery, privado, idArchivo)
