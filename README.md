@@ -6,9 +6,7 @@ Se ha desarrollado una API en lenguaje Go que tiene como función principal la e
 
 ![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/blob/master/png/Diagrama%20-%20Arquitectura.png)
 
-[![Alt text](https://img.youtube.com/vi/yYExnrmTcaQ/0.jpg)](https://www.youtube.com/watch?v=yYExnrmTcaQ)
-
-[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="100%">](https://www.youtube.com/watch?v=Hc79sDi3f0U)
+[<img src="https://img.youtube.com/vi/yYExnrmTcaQ/0.jpg" width="100%">](https://www.youtube.com/watch?v=yYExnrmTcaQ "Challenge Data Security")
 
 ### Pasos Iniciales:
 ------
