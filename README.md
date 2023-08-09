@@ -6,8 +6,8 @@ Se ha desarrollado una API en lenguaje Go que tiene como función principal la e
 
 ![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/blob/master/png/Diagrama%20-%20Arquitectura.png)
 
+[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=Hc79sDi3f0U "Now in Android: 55")
 
-Video o Gif
 ### Pasos Iniciales:
 ------
 #### Habilitar Entorno Google Cloud
@@ -17,6 +17,7 @@ Video o Gif
 3. Configurar la pantalla de consentimiento de OAuth y agrégar usuario de prueba -> [Consentimiento](https://console.cloud.google.com/apis/credentials/consent?hl=es-419)
 4. Generar credenciales para aplicación de escritorio de tipo **ID de cliente de OAuth** -> [OAuth](https://console.cloud.google.com/apis/credentials?hl=es-419) 
 5. Descargar credencial **[client_secret]**
+
 #### Entorno Windows con Docker
 
 1. Descargar e instalar MySQL ->  [MySQL](https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.33-winx64-debug-test.zip)
@@ -38,6 +39,7 @@ Video o Gif
 * ENV passroot=[passroot]-> Definido en el punto 4
 * ENV dbname=[dbname]-> Definido en el punto 3
 * ENV client_secret=[client_secret]-> Ubicación de la llave en formato JSON, archivo descargado una vez configurado el entorno de Google Cloud.
+* ENV openia=[Key API IA] -> Llave de conexión al API IA para su consumo
 
 ![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/blob/master/png/ENVDockerFile.png)
 
@@ -67,7 +69,7 @@ docker run -p 443:443 -p 80:80 servidor:Challenge
 * passroot=[passroot]-> Definido en el punto 4
 * dbname=[dbname]-> Definido en el punto 3
 * client_secret=[client_secret]-> Ubicación de la llave en formato JSON, archivo descargado una vez configurado el entorno de Google Cloud.
-
+* openia=[Key API IA] -> Llave de conexión al API IA para su consumo
 
 ![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/blob/master/png/Variables%20de%20Entorno.png)
 
