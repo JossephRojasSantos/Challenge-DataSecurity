@@ -341,7 +341,7 @@ func InsertarCriticidad(criticidad string, idArchivo string) {
 		_, err = srv.Files.Update(idArchivo, updateFile).Fields("properties").Do()
 		Err(err)
 		log.Println("Archivo clasificado")
-		if criticidad == "Critico" {
+		if criticidad == "Crítico" {
 			privado := 0
 			updateQuery := "UPDATE inventario SET Visibility = ? WHERE FileID = ?"
 			_, err := db.Exec(updateQuery, privado, idArchivo)
@@ -353,11 +353,17 @@ func InsertarCriticidad(criticidad string, idArchivo string) {
 			}
 			_, err = srv.Files.Update(idArchivo, updateFile).Fields("shared").Do()
 			Err(err)
+
+			permissions, err := srv.Permissions.List(idArchivo).Do()
+			Err(err)
+			for _, permission := range permissions.Permissions {
+				result := srv.Permissions.Delete(idArchivo, permission.Id).Do()
+				fmt.Print(result)
+			}
 		}
 	}
 
 }
-
 func OpenIA(w http.ResponseWriter, r *http.Request) {
 
 	query := r.FormValue("query")
