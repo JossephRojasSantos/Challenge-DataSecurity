@@ -6,8 +6,8 @@ Se ha desarrollado una API en lenguaje Go que tiene como función principal la e
 
 ![](https://github.com/JossephRojasSantos/Challenge-DataSecurity/blob/master/png/Diagrama%20-%20Arquitectura.png)
 
-[![Now in Android: 55]          // Title
-(https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg)] // Thumbnail
+[![Now in Android: 55]          
+(https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg)] 
 (https://www.youtube.com/watch?v=Hc79sDi3f0U "Now in Android: 55")
 
 ### Pasos Iniciales:
