@@ -8,7 +8,7 @@ Se ha desarrollado una API en lenguaje Go que tiene como función principal la e
 
 En el siguiente video, se detalla la evolución/cambio de la clasificación de los archivos.
 
-[<img style="border: 1px solid; color: black;" src="https://github.com/JossephRojasSantos/Challenge-DataSecurity/blob/master/png/Portada.jpg" width="100%">](https://www.youtube.com/watch?v=yYExnrmTcaQ "Challenge Data Security")
+[<img src="https://github.com/JossephRojasSantos/Challenge-DataSecurity/blob/master/png/Portada.jpg" width="100%">](https://www.youtube.com/watch?v=yYExnrmTcaQ "Challenge Data Security")
 
 ### Pasos Iniciales:
 ------
