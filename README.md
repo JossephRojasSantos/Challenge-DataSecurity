@@ -8,6 +8,8 @@ Se ha desarrollado una API en lenguaje Go que tiene como función principal la e
 
 [![Alt text](https://img.youtube.com/vi/yYExnrmTcaQ/0.jpg)](https://www.youtube.com/watch?v=yYExnrmTcaQ)
 
+[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=Hc79sDi3f0U "Now in Android: 55")
+
 ### Pasos Iniciales:
 ------
 #### Habilitar Entorno Google Cloud
